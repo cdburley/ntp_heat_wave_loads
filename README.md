@@ -8,7 +8,7 @@ The input data needed to recreate this process is stored in the [data](data/) di
 
 ## Output Files
 The output of this processing is stored in the [data](data/) directory with the filename 
-"TELL_Loads_2035_Based_on_YYYY_Weather.csv".
+"TELL_Loads_2035_Based_on_YYYY_Weather_With_Climate_Change.csv".
 
 ## Summary Plots
 Quick-look plots analyzing the data are stored in the [plots](plots/) directory.
