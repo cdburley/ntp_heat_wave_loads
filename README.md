@@ -10,6 +10,9 @@ The input data needed to recreate this process is stored in the [data](data/) di
 The output of this processing is stored in the [data](data/) directory with the filename 
 "TELL_Loads_2035_Based_on_YYYY_Weather.csv".
 
+## Summary Plots
+Quick-look plots analyzing the data are stored in the [plots](plots/) directory.
+
 ## Citations
 Any use of this data in a publication, presentation, or report should use the following citations. Please contact 
 Casey Burleyson (casey.burleyson@pnnl.gov) prior to any reuse of the data.
