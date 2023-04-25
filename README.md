@@ -7,7 +7,7 @@ The future loads for different weather years are based on the Total ELectricity 
 The input data needed to recreate this process is stored in the [data](data/) directory.
 
 ## Output Files
-The output of this processing is stored in the [data](data/) directory with the filename 
+The output of this processing is stored in the [data](data/) directory with the filenames 
 "TELL_Loads_2035_Based_on_YYYY_Weather_With_Climate_Change.csv".
 
 ## Summary Plots
