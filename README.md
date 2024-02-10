@@ -77,3 +77,19 @@ annual total load in each subregion to portion out the TELL loads.
 | WACM | WACM | 🟢 | - |
 | WALC | WALC | 🟢 | - |
 | WAUW | WAUW | 🟢 | - |
+
+
+## BAs in the EIC 
+>
+🟢 = Matched with no issue  
+🟡 = Caution advised  
+🔴 = No match
+>
+| GV BA | TELL BA | Matched? | Notes |
+| :-: | :-: | :-: | :-: |
+| AVA | AVA | 🟢 | - |
+| AZPS | AZPS | 🟢 | - |
+| BANC | BANC | 🟢 | - |
+| BPAT | BPAT | 🟢 | - |
+| CHPD| CHPD| 🟢 | - |
+| CIPB | CISO | 🟡 | Subregion of CISO |
