@@ -28,68 +28,21 @@ Burleyson, C., Thurber, T., & Vernon, C. (2023). Projections of Hourly Meteorolo
 Jones, A. D., Rastogi, D., Vahmani, P., Stansfield, A., Reed, K., Thurber, T., Ullrich, P., & Rice, J. S. (2022). IM3/HyperFACETS Thermodynamic Global Warming (TGW) Simulation Datasets (v1.0.0) [Data set]. MSD-LIVE Data Repository. https://doi.org/10.57931/1885756
 
 ## Notes
-1) Loads in CISO, IPCO, NEVP, and PACE are modeled as a whole in TELL but are separated in GridView. To create the data
-for these BAs I used the whole load simulated by TELL and distributed it to the subregions within the BA using the 
-annual total load in each subregion to portion out the TELL loads.
+1) In the WECC loads in CISO, IPCO, NEVP, and PACE are modeled as a whole in TELL but are separated in GridView. To 
+create the data for these BAs I used the whole load simulated by TELL and distributed it to the subregions within the 
+BA using the annual total load in each subregion to portion out the TELL loads. Those subregions will have different the
+same hour-to-hour variability but different magnitudes depending on their total load fractions.
+2) In the EIC loads in FMPP, FPL, MISO, PJM, SOCO, SWPP, and TVA are modeled as a whole in TELL but are separated in 
+GridView. I used the same technique to subdivide the loads as I did in the original WECC data workflow.
+3) TELL does not model BAs in Canada or Mexico. For BAs in those countries (CFE, IESO, TE, NB, NS, CORNWALL, NF, BCHA, 
+and AESO) I used the raw time series from the WECC+EIC Gridview file that Kostas passed to me.
+4) There are some regions that have no mapping to BAs modeled by TELL. For those regions I used the raw time series from 
+the WECC+EIC Gridview file that Kostas passed to me. Those BAs are SETH, SERU, SEHA, IPP-REL, MH, TH_Mead, TH_Malin, 
+SPC, TH_PV, OSC, PS, MPW, GLH, CPLW, YAD, and WBDC-WECC. Many of these regions have 0 loads in the GridView file that
+Kostas passed to me.
 
-## BAs in the WECC 
->
-🟢 = Matched with no issue  
-🟡 = Caution advised  
-🔴 = No match
->
-| GV BA | TELL BA | Matched? | Notes |
-| :-: | :-: | :-: | :-: |
-| AVA | AVA | 🟢 | - |
-| AZPS | AZPS | 🟢 | - |
-| BANC | BANC | 🟢 | - |
-| BPAT | BPAT | 🟢 | - |
-| CHPD| CHPD| 🟢 | - |
-| CIPB | CISO | 🟡 | Subregion of CISO |
-| CIPV | CISO | 🟡 | Subregion of CISO |
-| CISC | CISO | 🟡 | Subregion of CISO |
-| CISD | CISO | 🟡 | Subregion of CISO |
-| DOPD | DOPD | 🟢 | - |
-| EPE | EPE | 🟢 | - |
-| GCPD | GCPD | 🟢 | - |
-| IID | IID | 🟢 | - |
-| IPFE | IPCO | 🟡 | Subregion of IPCO |
-| IPMV | IPCO | 🟡 | Subregion of IPCO |
-| IPTV | IPCO | 🟡 | Subregion of IPCO |
-| LDWP | LDWP | 🟢 | - |
-| NEVP | NEVP | 🟡 | Subregion of NEVP |
-| NWMT | MWMT | 🟢 | - |
-| PACW | PACW | 🟢 | - |
-| PAID | PACE | 🟡 | Subregion of PACE |
-| PAUT | PACE | 🟡 | Subregion of PACE |
-| PAWY | PACE | 🟡 | Subregion of PACE |
-| PGE | PGE | 🟢 | - |
-| PNM | PNM | 🟢 | - |
-| PSCO | PSCO | 🟢 | - |
-| PSEI | PSEI | 🟢 | - |
-| SCL | SCL | 🟢 | - |
-| SPCC | NEVP | 🟡 | Subregion of NEVP |
-| SRP | SRP | 🟢 | - |
-| TEPC | TEPC | 🟢 | - |
-| TIDC | TIDC | 🟢 | - |
-| TPWR | TPWR | 🟢 | - |
-| VEA | CISO | 🟡 | Subregion of CISO |
-| WACM | WACM | 🟢 | - |
-| WALC | WALC | 🟢 | - |
-| WAUW | WAUW | 🟢 | - |
-
-
-## BAs in the EIC 
->
-🟢 = Matched with no issue  
-🟡 = Caution advised  
-🔴 = No match
->
-| GV BA | TELL BA | Matched? | Notes |
-| :-: | :-: | :-: | :-: |
-| AVA | AVA | 🟢 | - |
-| AZPS | AZPS | 🟢 | - |
-| BANC | BANC | 🟢 | - |
-| BPAT | BPAT | 🟢 | - |
-| CHPD| CHPD| 🟢 | - |
-| CIPB | CISO | 🟡 | Subregion of CISO |
+## Mapping Files
+Two files describing the BA mapping between TELL and Gridview are provided in the [data](data/) directory. The file 
+'BA_Mapping.xlsx' shows how the names match up and which BAs have subregions. The file 'Final_EIC_WECC_BA_Crosscheck.xlsx' 
+goes through the WECC+EIC Gridview file that Kostas passed to me column-by-column to make sure that each region 
+expected in the file is accounted for in my technique using the TELL model.
